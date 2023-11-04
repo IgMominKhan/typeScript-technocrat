@@ -1,20 +1,30 @@
 # Be A TypeScript Technocrat :-
 
-***Table Of Contents***
-  - [Introduction]() 
-    - [What is TypeScript](#what-is-typescript%3F) 
-    - [What is the purpose of TypeScript](#what-is-the-purpose-of-typescript%3F) 
-    - [What's wrong with Javascript](#what’s-wrong-with-javascript%3F)
-    - [Can Browsers recognize TypeScript](#can-browsers-recognize-typescript%3F) 
-    - [Benefits of TypeScript](#benefits-of-typescript)
-    - [TypeScript Installation](#typescript-installation)
-    - [Typescript Configuration](#typescript-configs-or-tsconfig.js-command%3A)
-    - [How To Run TypeScript File](#typescript-file-run%3A)
-  - [Basic of TypeScript](./module01/basicTypes.md) 
+ ### Table Of Contents
+
+- [Introduction]()
+  - [What is TypeScript?](#what-is-typescript)
+  - [What is the purpose of TypeScript?](#what-is-the-purpose-of-typescript)
+  - [What's wrong with Javascript?](#what’s-wrong-with-javascript)
+  - [Can Browsers recognize TypeScript?](#can-browsers-recognize-typescript)
+  - [Benefits of TypeScript](#benefits-of-typescript)
+  - [TypeScript Installation](#typescript-installation)
+  - [Typescript Configuration](#typescript-configs-or-tsconfig.js-command%3A)
+  - [How To Run TypeScript File?](#typescript-file-run%3A)
+- [Basic Types of TypeScript](./module01/basicTypes.md#basic-types-of-typescript)
+  - [How Many Types of Type Annotation In TypeScript?](./module01/basicTypes.md#how-many-types-of-type-annotation-in-typescript)
+  - [What is Implicit Type in TypeScript?](./module01/basicTypes.md#what-is-implicit-type-in-typescript)
+  - [What is Explicit Type in TypeScript?](./module01/basicTypes.md#what-is-explicit-type-in-typescript)
+  -  **[Data Types](./module01/basicTypes.md#data-types-)**
+        - [String](./module01/basicTypes.md#string-we-can-explecitly-define-a-variable-as-string) 
+        - [Number](./module01/basicTypes.md#number-we-can-explecitly-define-variables-as-number) 
+        - [Boolean](./module01/basicTypes.md#boolean-we-can-explecitly-define-variables-as-boolean) 
+        - [Array](./module01/basicTypes.md#array-we-can-explecitly-define-variables-as-array-in-typescript) 
+        - [Tuple](./module01/basicTypes.md#tuple-we-can-explecitly-define-variables-and-declear-the-number-of-elements-and-its-types-using-tuple)
+
 ## What is TypeScript?
 
-- TypeScript is an open-source, strongly typed, high-lavel programming
-  language.
+- TypeScript is an open-source, strongly typed, high-lavel programming language.
 - TypeScript is a superset of Javascript build by Mycrosoft.
 - TypeScript code can be complied to lower version of Javascript.
 

@@ -1,4 +1,4 @@
-# Types of TypeScript
+# Basic Types of TypeScript
 
 ### How Many Types of Type Annotation In TypeScript?
 
