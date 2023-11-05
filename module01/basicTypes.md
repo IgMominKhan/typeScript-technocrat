@@ -31,7 +31,7 @@
   - **Examples**
 
     ```ts
-    // inplicitly infers as any
+    // implicitly infers as any
     let name;
 
     // we can assign any type of data to the variables like velow:
@@ -50,22 +50,24 @@
     **Explicit Type Syntax**
 
     ```ts
-     const variableName : type = value;
+    // Explicit type declearlation 
+    
+    const variableName : type = value;
 
-     // or
-     let variableName : type;
-     age = value;
+    // or
+    let variableName : type;
+    age = value;
 
-     Examples:-
+    Examples:-
 
-     const name:string = "Ig Momin Khan";
+    const name:string = "Ig Momin Khan";
 
-     let age: number;
-     age = 23;
+    let age: number;
+    age = 23;
 
-     // if we try to assign string to number variables typescript shows error on the editor
+    // if we try to assign string to number variables typescript shows error on the editor
 
-     age = "twenty three"; // type string is not assignable to type number
+    age = "twenty three"; // type string is not assignable to type number
     ```
 
 # Data Types:-
@@ -78,6 +80,8 @@
   **Examples**
 
   ```ts
+  // String Type
+
   let whoAmI: string = "Ig Momin Khan";
 
   whoAmI = 3; // Type `number` is not assignable to type `string`
@@ -95,6 +99,8 @@
   **Examples**
 
   ```ts
+  // Number type
+  
   let age: number = 23;
 
   age = 3; // Type `number` is not assignable to type `number`
@@ -112,6 +118,7 @@
   **Examples**
 
   ```ts
+  // Boolean type
   let age: boolean = 23;
 
   age = 3; // Type `number` is not assignable to type `boolean`
@@ -130,7 +137,8 @@
   **Examples**
 
   ```ts
-  // array of string
+  // Array of string
+  
   // only string are allowed as "array" element
   const friends: string[] = ["Momin", "Sohag", "Suhan"];
 
@@ -139,7 +147,7 @@
   friends.push(null); // Argument of type "null" is not assignable to parametter of type "string"
   friends.unshift(true); // Argument of type "boolean" is not assignable to parametter of type "string"
 
-  // array of number
+  // Array of number
   // only number are allowed as "array" element
   const scores: number[] = [23, 32, 52, 23, 31];
 
@@ -148,7 +156,7 @@
   scores.push(null); // Argument of type "null" is not assignable to parametter of type "number"
   scores.unshift(true); // Argument of type "boolean" is not assignable to parametter of type "number"
 
-  // array of boolean
+  // Array of boolean
   // only boolean are allowed as "array" element
   const scores: boolean[] = [true, false, true, true, false];
 
@@ -156,6 +164,8 @@
   scores.unshift(undefined); // Argument of type "undefined" is not assignable to parametter of type "boolean"
   scores.push(null); // Argument of type "null" is not assignable to parametter of type "boolean"
   scores.unshift(3); // Argument of type "number" is not assignable to parametter of type "boolean"
+  
+  ...
   ```
 
 - ### `Tuple`: We can `Explecitly` define variables and declear the number of elements and it's types using `tuple`
@@ -166,6 +176,8 @@
   **Examples**
 
   ```ts
+  // Tuple type
+
   let person: [string, number, boolean] = ["Ig Momin Khan", 23, false];
 
   person[1] = "twenty three"; // Type `string` is not assignable to type `number`
@@ -185,6 +197,8 @@
     **Syntex:**
 
     ```ts
+    // Object type
+    
     const variableName: {
       propertyName: type;
     } = {
@@ -195,6 +209,8 @@
     **Examples:**
 
     ```ts
+    // Object type
+    
     const person: { name: string; age: number; isMarried: boolean } = {
       name: "Ig Momin Khan",
       age: 23,
@@ -213,6 +229,8 @@
     **Examples:**
 
     ```ts
+    // Optional Object property
+    
     const user: {
       firstName: string;
       middleName?: string; // middleName is optional
@@ -232,6 +250,8 @@
   **Examples:**
 
   ```ts
+  // Literal type and read-only property
+  
   const employe: {
     companyName: "Tech Solutions";
     readonly joinYear: number;
@@ -254,6 +274,8 @@ below examples
 **Examples:**
 
 ```ts
+// Function parameter and return type
+
 function add(num1: number, num2: number) {
   return num1 * num2;
 }
@@ -293,13 +315,16 @@ const concate = (p1: string, p2: string): string => {
 };
 ```
 
-# Type alias :-
+## Type alias :-
 
-Type alias enable us to reuse type several times. type alilas works like variables.
+Type alias enable us to reuse type several times. type alilas works like
+variables.
 
 **Examples:**
 
 ```ts
+// Type alias
+
 type Name = {
   firstName: string;
   middleName?: string;
@@ -314,7 +339,8 @@ type Student = {
   contact?: number;
 };
 
-const student1: Student = { // Student property used `Student` type alias to reduce code repetation
+const student1: Student = {
+  // Student property used `Student` type alias to reduce code repetation
   name: "Ig Momin Khan",
   age: 23,
   gender: "male",
@@ -326,5 +352,62 @@ const student2: Student = {
 };
 ```
 
+## `Union` and `Intersection` Types :-
 
+- _**`Union Type:-`**_ A variable can hold one or more possible values from
+  different types using `Union` types. `Union` types is denoted by the vertical
+  var (|) symbol. union type is used to handle different types in a single
+  variable or function arguments, difining function overloads.
 
+  **Examples :**
+
+  ```ts
+  // Union types
+  
+  type Age = number | undefined | null;
+
+  let myAge: Age = undefined; // Valid value
+  myAge = 23; // Valid value
+  myAge = null; // Valid value
+
+  // myAge = "twenty three"; // Type `twenty three` is not assigable to type "Age"
+  ```
+
+- _**Intersection Type:-**_ A variable must satisfy the requirements of multiple
+  types simultaneously. Intersection type is used in combining properties of
+  different types into a single type, defininig more specific and restrictive
+  types
+
+  **Examples :**
+
+  ```ts
+  // Intersection type
+  
+  type Person = {
+    name: string;
+    age: number;
+  };
+
+  type Employee = {
+    employeeId: number;
+    salary: number;
+  };
+
+  type PersonAndEmployee = Person & Employee;
+
+  let employee: PersonAndEmployee = {
+    name: "Ig Momin Khan",
+    age: 23,
+    employeeId: 5423423452362,
+    salary: 5000,
+  };
+
+  // NODE:- employee object must satisfy both `Person` and `Employ` types as if `PersonAndEmployee` is the Intersection of `Person` and `Employee` types.
+  ```
+
+ ## `unknown`, `Never`, `void` and `any` type :- 
+- ***`unknown type:-`*** A value that can have any type, But it doesn't stop type checking. `unknown` is used to handle values from external sources, or when the exact type is unknown. 
+- ***`never type:-`***  A value that never exist or can never be reached. `never` is useable for those function that never return a value, expressing unreachable code.
+
+- ***`void type:-`*** `void` represents the absence of a value. `void` can also be used to express that a certain expression doesn't produce any value.    
+- ***`any type:-`*** `any` type represents a value that can be any of type. It's commonly used when dealing with values from external sources or when the exact of a value is unknown. The `any` type allows to assign and manipulate values without explicit type constraints, But it also disables type checking for those values. 

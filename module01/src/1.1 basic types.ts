@@ -126,3 +126,35 @@ const student2: Student = { // Student property used `Student` type alias to red
   gender: "male",
   isMarried: false,
 };
+
+// Union types
+type Age = number | undefined | null;
+
+let myAge: Age = undefined; // Valid value
+myAge = 23; // Valid value
+myAge = null; // Valid value
+
+// myAge = "twenty three"; // Type `twenty three` is not assigable to type "Age"
+
+// Intersection type
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  employeeId: number;
+  salary: number;
+};
+
+type PersonAndEmployee = Person & Employee;
+
+let employee: PersonAndEmployee = {
+  name: "Ig Momin Khan",
+  age: 23,
+  employeeId: 5423423452362,
+  salary: 5000,
+};
+
+// NODE:- employee object must satisfy both `Person` and `Employ` types as if `PersonAndEmployee` is the Intersection of `Person` and `Employee` types.
