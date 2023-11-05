@@ -224,22 +224,107 @@
       isMarried: false,
     };
     ```
-    
+
   - #### Literal types and readonly property
-  Literal types works like constant value of the `object` property. Where `readonly` property is readonly available for next usages.
+    Literal types works like constant value of the `object` property. Where
+    `readonly` property is readonly available for next usages.
 
-    **Examples:**
-    ```ts
-    const employe: {
-      companyName: "Tech Solutions";
-      readonly joinYear: number;
-      experiance: number;
-    } = {
-      companyName: "Tech Solutions",
-      joinYear: 2021,
-      experiance: 2,
-    };
+  **Examples:**
 
-    // employe.companyName = "Web Solutions"; // Type `Web Solutions` is not assignable to type `Tech Solutions`
-    // employe.joinYear = 2020; // Can't assign to `joinYear` because it is a read-only property
-    ```
+  ```ts
+  const employe: {
+    companyName: "Tech Solutions";
+    readonly joinYear: number;
+    experiance: number;
+  } = {
+    companyName: "Tech Solutions",
+    joinYear: 2021,
+    experiance: 2,
+  };
+
+  // employe.companyName = "Web Solutions"; // Type `Web Solutions` is not assignable to type `Tech Solutions`
+  // employe.joinYear = 2020; // Can't assign to `joinYear` because it is a read-only property
+  ```
+
+## Function `parameter` and `return` type
+
+Function `parameter` and `return` type works like normal variable type likes
+below examples
+
+**Examples:**
+
+```ts
+function add(num1: number, num2: number) {
+  return num1 * num2;
+}
+
+// using arrow function
+const addTwoNum = (num1: number, num2: number): number => num2 + num2;
+
+add(2, 3); // 5
+// add(2, 'three')  // Argument of type `string` is not assignable to parametter of type `number`
+// add(null,undefined) // Argument of type `null` is not assignable to parametter of type `number`
+// add(2) // exprected 2 arguments, but got 1
+// add(2,3,4) // exprected 2 arguments, but got 3
+
+// function return type
+function concatinaton(p1: string, p2: number): string {
+  const n = parseInt(p1); //
+  // return n+p2 // Type `number` is not assignable to type `string`
+  // return p2 // Type `number` is not assignable to type string
+  return p1 + p2; // Only string type data are returnable,
+}
+
+// using arrow function
+const concate = (p1: string, p2: string): string => {
+  const n = parseInt(p1); //
+  // return n+p2 // Type `number` is not assignable to type `string`
+  // return p2 // Type `number` is not assignable to type string
+  return p1 + p2; // Only string type data are returnable,
+
+  // methods
+
+  const numbers: number[] = [0, 1, 2, 3, 4, 5, 6];
+
+  // as if Array.map return an array, we can store the return value as array of numbers using `number[]`
+  const numbersSquares: number[] = numbers.map(
+    (num: number): number => num * num,
+  );
+};
+```
+
+# Type alias :-
+
+Type alias enable us to reuse type several times. type alilas works like variables.
+
+**Examples:**
+
+```ts
+type Name = {
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+};
+
+type Student = {
+  name: Name; // name property used `Name` type alias to reduce code repetation
+  age: number;
+  gender: string;
+  isMarried: boolean;
+  contact?: number;
+};
+
+const student1: Student = { // Student property used `Student` type alias to reduce code repetation
+  name: "Ig Momin Khan",
+  age: 23,
+  gender: "male",
+  isMarried: false,
+};
+
+const student2: Student = {
+  name: "Suhag",
+};
+```
+
+
+

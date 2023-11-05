@@ -91,14 +91,38 @@ const employe: {
 // employe.joinYear = 2020; // Can't assign to `joinYear` because it is a read-only property
 
 // Type aliases
-type Person = {
-  name: string;
-  age: number;
+
+type Name = {
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+};
+
+type Student = {
+  name: Name; // name property used `Name` type alias to reduce code repetation
+  birthDate: number;
+  gender: string;
+  contact?: number;
   isMarried: boolean;
 };
 
-const personObj: Person = {
-  name: "Ig Momin Khan",
-  age: 23,
+const student1: Student = { // Student property used `Student` type alias to reduce code repetation
+  name: {
+    firstName: "Ig",
+    middleName: "Momin",
+    lastName: "Khan",
+  },
+  birthDate: 2000,
+  gender: "male",
+  isMarried: false,
+};
+
+const student2: Student = { // Student property used `Student` type alias to reduce code repetation
+  name: {
+    firstName: "Shuhag",
+    lastName: "Khan",
+  },
+  birthDate: 2002,
+  gender: "male",
   isMarried: false,
 };
