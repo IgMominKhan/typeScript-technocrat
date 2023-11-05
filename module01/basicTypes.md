@@ -172,3 +172,74 @@
   person[2] = undefined; // Type `undefinded` is not assignable to type `boolean`
   person[3]; // Tuple type [string, number, boolean] of lenght "3" has no element at index "3"
   ```
+
+## `Object` Types:-
+
+- TypeScript has `explecit Anounymous` ways to define `object types`.
+
+  - #### Anounymous Object Type:
+
+    - Anounymous `object types` are defined `inline` when declearing a
+      `variable` or `function` parametters.
+
+    **Syntex:**
+
+    ```ts
+    const variableName: {
+      propertyName: type;
+    } = {
+      propertyName: value,
+    };
+    ```
+
+    **Examples:**
+
+    ```ts
+    const person: { name: string; age: number; isMarried: boolean } = {
+      name: "Ig Momin Khan",
+      age: 23,
+      isMarried: false,
+    };
+
+    person.name = 23; // Type `number` is not assignable to type `string`
+    person.age = undefined; // Type `undefinded` is not assignable to type `number`
+    person.isMarried = "yes"; // Type `string` is not assignable to type `boolean`
+    ```
+
+  - #### Optional object property
+
+    TypeScript allowed us to define object property as `optional`
+
+    **Examples:**
+
+    ```ts
+    const user: {
+      firstName: string;
+      middleName?: string; // middleName is optional
+      lastName: string;
+      isMarried: boolean;
+    } = {
+      firstName: "Momin",
+      lastName: "Khan",
+      isMarried: false,
+    };
+    ```
+    
+  - #### Literal types and readonly property
+  Literal types works like constant value of the `object` property. Where `readonly` property is readonly available for next usages.
+
+    **Examples:**
+    ```ts
+    const employe: {
+      companyName: "Tech Solutions";
+      readonly joinYear: number;
+      experiance: number;
+    } = {
+      companyName: "Tech Solutions",
+      joinYear: 2021,
+      experiance: 2,
+    };
+
+    // employe.companyName = "Web Solutions"; // Type `Web Solutions` is not assignable to type `Tech Solutions`
+    // employe.joinYear = 2020; // Can't assign to `joinYear` because it is a read-only property
+    ```
